@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.container {
+  background-color: white;
+}
