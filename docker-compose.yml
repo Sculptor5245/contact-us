@@ -1,0 +1,20 @@
+version: '3'
+services:
+  react-app:
+    container_name: react-app
+    build: ./contact-form-app
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
+  express-api:
+    container_name: express-api
+    build: ./contact-us-api
+    ports:
+      - "5000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
