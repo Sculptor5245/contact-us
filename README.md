@@ -49,3 +49,6 @@ If you encounter any issues while running the application, please check the foll
 ```bash
 docker-compose logs
 ```
+
+### Note
+I decided to use sqlite for the database because it is a lightweight database that is easy to set up and use. It is also a good choice for small applications like this one. However, it is not recommended for production applications. I will use a more robust database like PostgreSQL or MySQL.
