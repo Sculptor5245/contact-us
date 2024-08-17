@@ -18,6 +18,8 @@ interface FormState {
   message: string;
 }
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const ContactPage: React.FC = () => {
   const [contactInfo, setContactInfo] = useState<ContactInfo | null>(null);
   const [formState, setFormState] = useState<FormState>({
@@ -31,7 +33,7 @@ const ContactPage: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/contact")
+    fetch(`${apiUrl}/contact`)
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
@@ -51,7 +53,7 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/submit-form", {
+      const response = await fetch(`${apiUrl}/submit-form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
